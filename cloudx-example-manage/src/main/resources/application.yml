@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: example-manage
+server:
+  port: 8090
+  
+eureka: 
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9080/eureka/
+
+shiro:
+  loginUrl: /manage/login
+  doLoginUrl: /manage/doLogin
+  successUrl: /manage/home
+  successView: home
+  logoutUrl: /manage/logout
+  unauthorizedUrl: /manage/unauthorized
+  unauthorizedView: unauthorized_view
+  verificationCodeUrl: /manage/verificationCode
+  verificationCodeHeight: 40
+  verificationCodeWidth: 100
+  filterChainDefinitions: /statc/**=anon,/manage/**=authc,resource,kickout
+ 
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: root
+    timeout: 10000
+    expire: 1800

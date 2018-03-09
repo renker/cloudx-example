@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: example-eureka
+#  profiles:
+#    active: test01
+    
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: ${spring.cloud.client.ipAddress}
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+    
+management:
+  security:
+    enabled: false

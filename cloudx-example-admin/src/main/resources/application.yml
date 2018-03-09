@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: example-admin
+  boot:
+    admin:
+      routes:
+        endpoints: env,metrics,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,loggers,auditevents,activiti
+management:
+  security:
+    enabled: false
+    
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: ${spring.cloud.client.ipAddress}
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+    
+#info: 
+#  version: @project.version@
