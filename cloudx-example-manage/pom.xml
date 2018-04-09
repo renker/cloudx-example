@@ -43,5 +43,28 @@
 		<groupId>org.springframework.cloud</groupId>
 		<artifactId>spring-cloud-starter-ribbon</artifactId>
 	</dependency>
+	<dependency>
+		<groupId>org.scala-lang</groupId>
+		<artifactId>scala-library</artifactId>
+		<version>2.11.0</version>
+	</dependency>
+	<dependency>
+		<groupId>cglib</groupId>
+		<artifactId>cglib-nodep</artifactId>
+		<version>2.1_3</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework.integration</groupId>
+		<artifactId>spring-integration-http</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-jta-narayana</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.hadoop</groupId>
+		<artifactId>hadoop-core</artifactId>
+		<version>1.0.0</version>
+	</dependency>
   </dependencies>
 </project>

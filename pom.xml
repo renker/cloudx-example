@@ -9,7 +9,6 @@
   
   <groupId>com.renker.example</groupId>
   <artifactId>cloudx-example</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   
   <modules>
