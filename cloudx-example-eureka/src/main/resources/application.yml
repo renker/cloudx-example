@@ -9,6 +9,9 @@ eureka:
     prefer-ip-address: true
     hostname: ${spring.cloud.client.ipAddress}
     instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+  server:
+    enable-self-preservation: false #关闭eureka的自我保护机制 生产建议开启
+    eviction-interval-timer-in-ms: 60000 #清理间隔（单位毫秒，默认是60*1000）
     
 management:
   security:
