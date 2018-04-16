@@ -1,0 +1,23 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: example-zuul
+
+#eureka config
+eureka:
+  client:
+    registry-fetch-interval-seconds: 20
+  instance:
+    lease-renewal-interval-in-seconds: 20
+    lease-expiration-duration-in-seconds: 40
+    prefer-ip-address: true
+    hostname: ${spring.cloud.client.ipAddress}
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+    
+zuul:
+  add-host-header: true
+  routes:
+    service:
+      path: /**
+      service-id: example-server
