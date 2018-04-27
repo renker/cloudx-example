@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: example-trace1
+  sleuth:
+    sampler:
+      percentage: 1
+  zipkin:
+    base-url: http://127.0.0.1:7070
+    
+server:
+  port: 7080
+  
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9080/eureka/
+  instance:
+    lease-renewal-interval-in-seconds: 20
+    lease-expiration-duration-in-seconds: 40
+    prefer-ip-address: true
+    hostname: ${spring.cloud.client.ipAddress}
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+   
